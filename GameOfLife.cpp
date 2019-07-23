@@ -72,7 +72,8 @@ void SimulationProcess()
 				for(int _j=j-1;_j<j+2;++_j)
 					if(_i>=0 && _i<MapSize && _j>=0 && _j<MapSize && GameMap[_i][_j])
 						++LivingCellCnt;
-			--LivingCellCnt;//sub itself
+			if(GameMap[i][j])
+				--LivingCellCnt;//sub itself
 			if(LivingCellCnt==3)
 				TempMap[i][j]=true;
 			else if(LivingCellCnt==2)
